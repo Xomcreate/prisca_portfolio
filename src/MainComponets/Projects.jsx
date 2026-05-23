@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0); // -1 for prev, 1 for next
+  const [direction, setDirection] = useState(0);
   const timeoutRef = useRef(null);
 
   const projectData = [
@@ -68,7 +68,7 @@ function Projects() {
       title: "Learning Management System",
       description: "An online educational environment equipped with structured multi-tier course tracks, fluid video lecture streams, interactive quiz blocks, and individual student progress metrics.",
       image: "/webp-images/cbt.webp",
-      tech: ["Vb.net", "visual studio"],
+      tech: ["Vb.net", "Visual Studio"],
       githubUrl: "#",
       isDesktopApp: true
     },
@@ -175,7 +175,7 @@ function Projects() {
   const renderActionButton = (project) => {
     if (project.isComingSoon) {
       return (
-        <button 
+        <button
           disabled
           className="bg-white/5 border border-white/10 text-white/40 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider cursor-not-allowed"
         >
@@ -186,7 +186,7 @@ function Projects() {
 
     if (project.isDesktopApp) {
       return (
-        <a 
+        <a
           href={project.githubUrl}
           className="relative group overflow-hidden bg-linear-to-r from-slate-700 to-slate-800 hover:scale-[1.03] active:scale-[0.98] transition duration-300 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2.5 shadow-lg"
         >
@@ -199,7 +199,7 @@ function Projects() {
 
     if (project.isAdminDashboard) {
       return (
-        <a 
+        <a
           href={project.githubUrl}
           className="relative group overflow-hidden bg-linear-to-r from-indigo-700 to-indigo-900 hover:scale-[1.03] active:scale-[0.98] transition duration-300 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2.5 shadow-lg"
         >
@@ -211,7 +211,7 @@ function Projects() {
     }
 
     return (
-      <a 
+      <a
         href={project.liveUrl || "#"}
         className="relative group overflow-hidden bg-linear-to-r from-[#5E25B6] to-[#7B2CBF] hover:scale-[1.03] active:scale-[0.98] transition duration-300 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2.5 shadow-[0_4px_25px_rgba(94,37,182,0.4)]"
       >
@@ -225,7 +225,7 @@ function Projects() {
 
   return (
     <section id="projects" className="min-h-screen bg-[#120A21] text-white py-32 px-6 md:px-12 relative overflow-hidden flex flex-col justify-center">
-      
+
       {/* ANIMATED SVG WAVY MESH BACKGROUND */}
       <div className="absolute inset-0 opacity-20 pointer-events-none z-0">
         <svg className="w-full h-full" viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg">
@@ -273,7 +273,7 @@ function Projects() {
 
       {/* COMPONENT CONTENT CORE */}
       <div className="max-w-7xl w-full mx-auto relative z-10 space-y-12">
-        
+
         {/* HEADER BLOCK */}
         <div className="flex flex-col md:flex-row items-center md:justify-between gap-6 text-center md:text-left">
           <div className="space-y-3">
@@ -291,7 +291,7 @@ function Projects() {
 
           {/* CAROUSEL CONTROLLER UTILITIES */}
           <div className="flex items-center gap-4">
-            <button 
+            <button
               onClick={handlePrev}
               className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#E2D4F7] hover:text-white hover:bg-[#5E25B6]/30 hover:border-[#5E25B6]/50 active:scale-95 transition-all duration-300 z-20"
             >
@@ -300,7 +300,7 @@ function Projects() {
             <span className="font-mono text-sm text-[#E2D4F7]/60">
               {String(currentIndex + 1).padStart(2, '0')} / {String(projectData.length).padStart(2, '0')}
             </span>
-            <button 
+            <button
               onClick={handleNext}
               className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#E2D4F7] hover:text-white hover:bg-[#5E25B6]/30 hover:border-[#5E25B6]/50 active:scale-95 transition-all duration-300 z-20"
             >
@@ -333,6 +333,10 @@ function Projects() {
                       src={projectData[currentIndex].image}
                       alt={projectData[currentIndex].title}
                       className="w-full h-full object-cover transform scale-100 group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+                      onError={(e) => {
+                        e.currentTarget.style.display = "none";
+                        e.currentTarget.parentElement.classList.add("bg-[#1A1235]");
+                      }}
                     />
                   </div>
                 </div>
@@ -357,8 +361,8 @@ function Projects() {
                 {/* TECH LABELS & PILLS */}
                 <div className="flex flex-wrap justify-center md:justify-start gap-2 pt-2">
                   {projectData[currentIndex].tech.map((techItem, i) => (
-                    <span 
-                      key={i} 
+                    <span
+                      key={i}
                       className="font-mono text-[11px] font-bold bg-[#5E25B6]/10 border border-[#5E25B6]/30 px-3 py-1 rounded-md text-[#E2D4F7]"
                     >
                       {techItem}
@@ -390,8 +394,8 @@ function Projects() {
               key={index}
               onClick={() => handleDotClick(index)}
               className={`h-2.5 rounded-full transition-all duration-300 ${
-                currentIndex === index 
-                  ? "w-8 bg-linear-to-r from-[#5E25B6] to-[#7B2CBF]" 
+                currentIndex === index
+                  ? "w-8 bg-linear-to-r from-[#5E25B6] to-[#7B2CBF]"
                   : "w-2.5 bg-white/10 hover:bg-white/20"
               }`}
               title={`Go to project ${index + 1}`}
