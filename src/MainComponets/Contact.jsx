@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { FaTerminal, FaEnvelope, FaLinkedin, FaGithub, FaPaperPlane, FaUser, FaHeading } from "react-icons/fa";
 
 function Contact() {
@@ -15,35 +16,46 @@ function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSystemStatus("TRANSMITTING_PACKETS...");
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/contact`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }
-      );
+  setIsSubmitting(true);
+  setSystemStatus("TRANSMITTING_PACKETS...");
 
-      if (!response.ok) throw new Error("Server error");
+  try {
+    const response = await axios.post(
+      "https://folio-back-1-yx6q.onrender.com/api/contact",
+      formData
+    );
 
-      setSystemStatus("TRANSMISSION_SUCCESS_200_OK");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setTimeout(() => setSystemStatus("READY_TO_TRANSMIT"), 4000);
-    } catch (err) {
-      setSystemStatus("TRANSMISSION_FAILED_500");
-      console.error("Transmission error:", err);
-      setTimeout(() => setSystemStatus("READY_TO_TRANSMIT"), 4000);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    console.log(response.data);
 
+    setSystemStatus("TRANSMISSION_SUCCESS_200_OK");
+
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+
+    setTimeout(() => {
+      setSystemStatus("READY_TO_TRANSMIT");
+    }, 4000);
+
+  } catch (err) {
+    console.error("Transmission error:", err);
+
+    setSystemStatus("TRANSMISSION_FAILED_500");
+
+    setTimeout(() => {
+      setSystemStatus("READY_TO_TRANSMIT");
+    }, 4000);
+
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   return (
     <section id="contact" className="relative bg-[#120A21] text-white py-20 md:py-32 px-4 sm:px-6 md:px-12 overflow-hidden min-h-screen flex flex-col justify-center">
 
