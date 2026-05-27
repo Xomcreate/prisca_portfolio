@@ -119,7 +119,7 @@ function Hero() {
 
               {/* DOWNLOAD CV */}
              <a
-  href="/cv/Prisca.pdf"
+  href="/cv/Chisom's Cv.docx"
   download
   target="_blank"
   rel="noreferrer"

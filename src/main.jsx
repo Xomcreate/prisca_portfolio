@@ -21,7 +21,7 @@ createRoot(document.getElementById('root')).render(
 <About/>
 <Contact/>
 <Footer/>
-  </StrictMode>,
+</StrictMode>,
 )
 
 // Skills

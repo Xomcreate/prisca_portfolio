@@ -24,7 +24,7 @@ function Contact() {
 
   try {
     const response = await axios.post(
-      "https://folio-back-1-yx6q.onrender.com/api/contact",
+      "https://portback-w3lq.onrender.com/api/contact",
       formData
     );
 

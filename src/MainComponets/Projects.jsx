@@ -86,7 +86,7 @@ function Projects() {
       image: "/webp-images/admin.webp",
       tech: ["React", "Django", "db.sqlite"],
       githubUrl: "https://github.com/Xomcreate/admindashboard",
-      isAdminDashboard: true
+     liveUrl: "https://admindashboard-ruddy-beta.vercel.app/"
     },
     {
       title: "Prisca's PortFolio",
