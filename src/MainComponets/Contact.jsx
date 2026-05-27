@@ -129,7 +129,7 @@ function Contact() {
                     <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-[#E2D4F7] group-hover:bg-[#5E25B6]/30 transition-colors">
                       <FaEnvelope />
                     </div>
-                    <span>your.email@example.com</span>
+                    <span>priscaojimba15@gmail.com.com</span>
                   </a>
                 </div>
               </div>
