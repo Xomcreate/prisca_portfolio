@@ -9,6 +9,14 @@ function Projects() {
 
   const projectData = [
     {
+      title: "Prisbyte Solutions Website",
+      description: "A corporate tech-agency platform for a software development company offering website & mobile app development, e-commerce, AI integration, UI/UX design, business automation, tech consultation, and coding mentorship — built to attract clients and position the brand as a trusted tech partner for growth.",
+      image: "/webp-images/one.webp",
+      tech: ["React", "Node.js", "Tailwind"],
+      githubUrl: "#",
+      liveUrl: "https://prisbyte-innovations.vercel.app/"
+    },
+    {
       title: "Computer Based Test Platform",
       description: "A comprehensive digital examination system featuring real-time test delivery, automated grading scales, individual student profiles, and deep performance analytics dashboards for administrators.",
       image: "https://xomcodes.vercel.app/assets/ee-B3m5Ub_F.png",
@@ -78,7 +86,7 @@ function Projects() {
       image: "/webp-images/eco.webp",
       tech: ["React", "Node.js", "MongoDB"],
       githubUrl: "#",
-      isComingSoon: true
+       liveUrl: "https://shopsquare-bay.vercel.app/"
     },
     {
       title: "Admin DashBoard Investment Tracker",
