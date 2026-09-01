@@ -119,6 +119,14 @@ function Projects() {
       tech: ["React", "Node.js", "Tailwind"],
       githubUrl: "https://github.com/Xomcreate/my_shaylaa_birthday",
       liveUrl: "https://my-shaylaa-birthday.vercel.app/"
+    },
+    {
+      title: "Happy Birthday Dad Tribute Page",
+      description: "A heartfelt personal tribute site built for my dad's birthday, featuring a rotating hero video reel, a scrolling photo memory gallery, an interactive virtual toast, and a dedicated handwritten-style message section.",
+      image: "/webp-images/dad.webp",
+      tech: ["React", "Framer Motion", "Tailwind"],
+      githubUrl: "https://github.com/Xomcreate/happy_birthday_dad",
+      liveUrl: "https://happybirthdaydad-two.vercel.app/"
     }
   ];
 
