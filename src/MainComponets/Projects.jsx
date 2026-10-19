@@ -17,6 +17,14 @@ function Projects() {
       liveUrl: "https://prisbyte-innovations.vercel.app/"
     },
     {
+      title: "Healthcare Franchise System",
+      description: "A comprehensive management and franchise platform designed to streamline multi-location medical operations, patient tracking, staff coordination, and administrative reporting across healthcare centers.",
+      image: "/webp-images/wales.webp", // Update with your actual image path or URL
+      tech: ["React", "Python", "Tailwind"],
+      githubUrl: "https://github.com/Xomcreate/wales_healthcare", // Replace with your actual repo
+      liveUrl: "https://walescare.ca/" // Replace with your actual live URL
+    },
+    {
       title: "Computer Based Test Platform",
       description: "A comprehensive digital examination system featuring real-time test delivery, automated grading scales, individual student profiles, and deep performance analytics dashboards for administrators.",
       image: "https://xomcodes.vercel.app/assets/ee-B3m5Ub_F.png",
@@ -86,7 +94,7 @@ function Projects() {
       image: "/webp-images/eco.webp",
       tech: ["React", "Node.js", "MongoDB"],
       githubUrl: "#",
-       liveUrl: "https://shopsquare-bay.vercel.app/"
+      liveUrl: "https://shopsquare-bay.vercel.app/"
     },
     {
       title: "Admin DashBoard Investment Tracker",
@@ -94,7 +102,7 @@ function Projects() {
       image: "/webp-images/admin.webp",
       tech: ["React", "Django", "db.sqlite"],
       githubUrl: "https://github.com/Xomcreate/admindashboard",
-     liveUrl: "https://iposecurestocks.com/"
+      liveUrl: "https://iposecurestocks.com/"
     },
     {
       title: "Prisca's PortFolio",
